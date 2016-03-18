@@ -73,12 +73,12 @@ RUN /home/webrtc/webrtc.googlecode.com/install-build-deps.sh --no-prompt --syms 
 
 USER webrtc
 
-RUN cd /home/webrtc/webrtc.googlecode.com && \
-    JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 \
-    PATH=$PATH:/home/webrtc/depot_tools \
-    GYP_DEFINES="enable_tracing=1 build_with_libjingle=1 build_with_chromium=0 libjingle_java=1 OS=android" \
-    GYP_GENERATOR_FLAGS="output_dir=out_android" \
-    fetch webrtc_android
+#RUN cd /home/webrtc/webrtc.googlecode.com && \
+#    JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 \
+#    PATH=$PATH:/home/webrtc/depot_tools \
+#    GYP_DEFINES="enable_tracing=1 build_with_libjingle=1 build_with_chromium=0 libjingle_java=1 OS=android" \
+#    GYP_GENERATOR_FLAGS="output_dir=out_android" \
+#    fetch webrtc_android
 
 # RUN cd /home/webrtc/webrtc.googlecode.com && \
 #     PATH=$PATH:/home/webrtc/depot_tools gclient config http://webrtc.googlecode.com/svn/trunk && \
@@ -86,12 +86,12 @@ RUN cd /home/webrtc/webrtc.googlecode.com && \
 #     JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/ PATH=$PATH:/home/webrtc/depot_tools gclient sync --force --jobs 100 && \
 #RUN cd /home/webrtc/webrtc.googlecode.com && chown -R webrtc:webrtc *
 
-RUN cd /home/webrtc/webrtc.googlecode.com/src && \
-    GYP_DEFINES="enable_tracing=1 build_with_libjingle=1 build_with_chromium=0 libjingle_java=1 OS=android" \
-    GYP_GENERATOR_FLAGS="output_dir=out_android" \
-    JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/ PATH=$PATH:/home/webrtc/depot_tools gclient runhooks && \
-    JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/ PATH=$PATH:/home/webrtc/depot_tools ninja -C out_android/Debug AppRTCDemo && \
-    JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/ PATH=$PATH:/home/webrtc/depot_tools ninja -C out_android/Release AppRTCDemo
+#RUN cd /home/webrtc/webrtc.googlecode.com/src && \
+#    GYP_DEFINES="enable_tracing=1 build_with_libjingle=1 build_with_chromium=0 libjingle_java=1 OS=android" \
+#    GYP_GENERATOR_FLAGS="output_dir=out_android" \
+#    JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/ PATH=$PATH:/home/webrtc/depot_tools gclient runhooks && \
+#    JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/ PATH=$PATH:/home/webrtc/depot_tools ninja -C out_android/Debug AppRTCDemo && \
+#    JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64/ PATH=$PATH:/home/webrtc/depot_tools ninja -C out_android/Release AppRTCDemo
 
 RUN cd /home/webrtc/webrtc.googlecode.com/src && \
     GYP_DEFINES="enable_tracing=1 build_with_libjingle=1 build_with_chromium=0 libjingle_java=1" \
