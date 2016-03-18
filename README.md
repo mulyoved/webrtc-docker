@@ -5,14 +5,14 @@ Docker container for [WebRTC](http://www.webrtc.org/reference/getting-started). 
 
 get from docker hub:
 
-    docker pull oleg/webrtc
-    docker run -p 6080:6080 -t -i oleg/webrtc
+    docker pull mulyoved/webrtc
+    docker run -p 6080:6080 -t -i mulyoved/webrtc
 
 or to build container from dockerfile, type command in current directory:
 
     git clone https://github.com/osblinnikov/webrtc-docker.git
     cd webrtc-docker
-    docker build -t oleg/webrtc .
+    docker build -t mulyoved/webrtc .
 
 To start the fresh built container simply type:
 
